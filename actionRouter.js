@@ -39,15 +39,31 @@ actionRouter.get('/:id', async (req,res) => {
 
 //Post new action
 
-actionRouter.post('/:project_id', async (req,res) => {
+actionRouter.post('/', async (req,res) => {
     try{
-        const action = await Action.insert(req.params.project_id, req.body);
-        res.status(200).json({action});
+      const {project_id, description, notes } = req.body;
+        if(!project_id){
+        
+        res.status(404).json({message : "No project with this ID"});
+        } 
+         if (!notes|| ! description) {
+            res.status(404).json({ message : "Needs to have notes and description"});
+        }
+         else {
+            const action = await Action.insert(req.body);
+            res.status(200).json(action);
+        }
     } catch (error) {
         console.log(error);
         res.status(500).json({message: "Error adding action"});
     }
 });
+
+const isID = (req,res,next) => {
+    const id = req.body.project_id;
+    console.log(id);
+    
+}
 
 //Put action by ID
 
