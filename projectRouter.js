@@ -51,6 +51,15 @@ projectRouter.post('/', async (req,res) => {
 
 //Put project by ID
 
+projectRouter.put('/:id', async( req,res) => {
+    try{
+        const project = await Project.update(req.params.id, req.body);
+        res.status(200).json({project});
+    } catch (error) {
+        res.status(500).json({message : "Error editing Project"});
+    }
+});
+
 //Delete project by ID
 
 
