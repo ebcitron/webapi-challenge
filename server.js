@@ -7,8 +7,8 @@ const server = express();
 server.use(express.json());
 server.use(helmet());
 
-server.use("/api/projects", projectRouter)
-server.use("/api/actions", actionRouter);
+server.use("/api/project", projectRouter)
+server.use("/api/action", actionRouter);
 server.get("/", (req,res) => {
     res.send("Welcome!");
 });
