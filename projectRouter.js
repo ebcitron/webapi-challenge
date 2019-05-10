@@ -62,6 +62,14 @@ projectRouter.put('/:id', async( req,res) => {
 
 //Delete project by ID
 
+projectRouter.delete('/:id', async (req, res) => {
+    try{
+        const project = await Project.remove(req.params.id);
+        res.status(200).json({message: "Project was deleted"});
+    } catch (error){
+        res.status(500).json({message: "Error deleting project"});
+    }
+});
 
 
 
