@@ -26,13 +26,23 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] Mention two parts of Express that you learned about this week.
 
+  I learned what express is, and how easy it makes serving things up
+
 - [ ] Describe Middleware?
+
+  Middleware is a function/code that you can set to intercept other processes. This allows you to check things, change things, and do whatever you want, in any sequence you want, as the code runs.
 
 - [ ] Describe a Resource?
 
+  A resource is something that people will be making requests for/on/to, in this sprint, the actions and projects are the resources
+
 - [ ] What can the API return to help clients know if a request was successful?
 
+  It usually returns a status code and sometimes a message
+
 - [ ] How can we partition our application into sub-applications?
+
+  We can partiton things out using routes
 
 ## Project Setup
 
