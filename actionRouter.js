@@ -59,11 +59,7 @@ actionRouter.post('/', async (req,res) => {
     }
 });
 
-const isID = (req,res,next) => {
-    const id = req.body.project_id;
-    console.log(id);
-    
-}
+
 
 //Put action by ID
 
